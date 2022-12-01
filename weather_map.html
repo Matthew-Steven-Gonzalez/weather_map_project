@@ -6,7 +6,7 @@
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Bootstrap CSS -->
-<!--    <link rel="stylesheet" href="bootstrap-5.1.3/css/bootstrap.css">-->
+    <link rel="stylesheet" href="bootstrap-5.1.3/css/bootstrap.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/weatherly.css">
 </head>
@@ -15,10 +15,6 @@
 
 
 <div id="map"></div>
-
-<!-- Custom JS-->
-
-<script src="js/weatherly.js"></script>
 
 <!-- Mapbox JS -->
 
@@ -34,22 +30,17 @@
 
 <!-- link for bootstrap -->
 
-<!--<script defer src="bootstrap-5.1.3/js/bootstrap.js"></script>-->
+<script defer src="bootstrap-5.1.3/js/bootstrap.js"></script>
 
 <!-- link for jQuery -->
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+<!-- Custom JS-->
 
-<script>
-    mapboxgl.accessToken = mapKey;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 15,
-        center: [-87.96028, 42.30528]
-    });
-</script>
+<script src="js/weatherly.js"></script>
+
+
 </body>
 </html>
