@@ -1,7 +1,6 @@
 //Variables
 var weatherAPIForecast = "http://api.openweathermap.org/data/2.5/forecast"
 var weatherAPIWeather = "http://api.openweathermap.org/data/2.5/weather"
-var homeLocation = "Virginia Beach, US"
 
 
 mapboxgl.accessToken = mapKey;
@@ -13,7 +12,9 @@ let map = new mapboxgl.Map({
 });
 
 forecast([-98.4916, 29.4252]);
-
+var marker = new mapboxgl.Marker({draggable: true})
+    .setLngLat([-98.4916, 29.4252])
+    .addTo(map);
 
 
 function forecast([lon, lat]) {
@@ -25,17 +26,16 @@ function forecast([lon, lat]) {
     }).done(function (data) {
         let reports = data.list;
         console.log(data);
-        var marker = new mapboxgl.Marker({draggable: true})
-            .setLngLat([lon, lat])
-            .addTo(map);
         for (let i = 0; i < reports.length; i += 8) {
             // should get 5 objects back
             console.log(reports[i]);
-            console.log(reports[i].dt_text);
+            console.log(reports[i].dt_txt.split(" "));
             // card info
             var html = '<div class ="card">';
-            html += "<div id='date'><p>" + reports[i].dt_txt + "</p></div>";
-            html += "<div id='currentWeather' class='text-center'> " + reports[i].main.temp + " </div>";
+            html += "<div id='date' class='text-center '><p class='mb-0'>" + reports[i].dt_txt.split(" ")[0] + "</p></div>";
+            html += "<p id='info' class='text-center mb-0 fw-bold'> Tempetature:</p>";
+            html += "<div id='currentWeather' class='text-center'> " + reports[i].main.temp.toFixed(1) + "&#8457 </div>";
+            html += "<p id='info' class='text-center mb-0 fw-bold'> conditons:</p>";
             html += "<div >";
             html += "<p id='info' class='text-center '> " + reports[i].weather[0].description + " </p>";
             html += "</div>";
