@@ -13,7 +13,6 @@
 <body>
 <nav class="navbar bg-dark mb-3">
     <h1 class="text-white">Weatherly</h1>
-<!--    <p id="currentCity" class=" text-white">Current city: <span id="currentLocation"></span> </p>-->
 </nav>
 <div class="container ">
     <div class="input-group mb-3 ">
@@ -22,41 +21,43 @@
     </div>
 
     <div class="container row mb-3">
-        <div id="weatherCard1" class="col"></div>
-        <div id="weatherCard2" class="col"></div>
-        <div id="weatherCard3" class="col"></div>
-        <div id="weatherCard4" class="col"></div>
-        <div id="weatherCard5" class="col"></div>
+        <div id="weatherCard1" class="col weatherCard"></div>
+        <div id="weatherCard2" class="col weatherCard "></div>
+        <div id="weatherCard3" class="col weatherCard"></div>
+        <div id="weatherCard4" class="col weatherCard"></div>
+        <div id="weatherCard5" class="col weatherCard"></div>
     </div>
 
-    <div id="map"></div>
+    <div id="map" class="w-100"></div>
 </div>
 
 
-<!-- Mapbox JS -->
+
 <div>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <!-- Mapbox JS -->
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js' rel="script"></script>
 
     <!-- link for mapkey -->
 
-    <script src="js/keys.js"></script>
+    <script src="js/keys.js" rel="script"></script>
 
     <!-- link for geocorder -->
 
-    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src="js/mapbox-geocoder-utils.js" rel="script"></script>
 
     <!-- link for bootstrap -->
 
-    <script defer src="bootstrap-5.1.3/js/bootstrap.js"></script>
+    <script src="bootstrap-5.1.3/js/bootstrap.js" rel="script"></script>
 
     <!-- link for jQuery -->
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" rel="script"></script>
 
     <!-- Custom JS-->
 
-    <script src="js/weatherly.js"></script>
+    <script src="js/weatherly.js" rel="script"></script>
 </div>
 
 </body>
