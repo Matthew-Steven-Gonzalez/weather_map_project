@@ -7,12 +7,12 @@ mapboxgl.accessToken = mapKey;
 let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10',
-    zoom: 10,
+    zoom: 6,
     center: [-98.4916, 29.4252]
 });
 
 forecast([-98.4916, 29.4252]);
-var marker = new mapboxgl.Marker({draggable: true})
+var marker1 = new mapboxgl.Marker({draggable: true})
     .setLngLat([-98.4916, 29.4252])
     .addTo(map);
 
@@ -25,12 +25,7 @@ function forecast([lon, lat]) {
         units: "imperial"
     }).done(function (data) {
         let reports = data.list;
-        console.log(data);
         for (let i = 0; i < reports.length; i += 8) {
-            // should get 5 objects back
-            console.log(reports[i]);
-            console.log(reports[i].dt_txt.split(" "));
-            // card info
             var html = '<div class ="card">';
             html += "<div id='date' class='text-center '><p class='mb-0'>" + reports[i].dt_txt.split(" ")[0] + "</p></div>";
             html += "<p id='info' class='text-center mb-0 fw-bold'> Tempetature:</p>";
@@ -55,21 +50,20 @@ function forecast([lon, lat]) {
         }
 
         function onDragEnd() {
-            const lngLat = marker.getLngLat();
-            console.log(lngLat)
+            const lngLat = marker1.getLngLat();
             forecast([lngLat.lng , lngLat.lat]);
         }
 
-        marker.on('dragend', onDragEnd);
+        marker1.on('dragend', onDragEnd);
 
     });
 }
     $('#locationButton').click(function () {
     geocode($('#searchedLocation').val(), mapKey).then(function (results) {
-        console.log(results);
         map.setCenter(results);
         map.setZoom(13);
-        forecast(results)
+        forecast(results);
+        marker1.setLngLat(results);
     })
 })
 
