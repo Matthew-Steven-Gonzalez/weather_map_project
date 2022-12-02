@@ -11,23 +11,22 @@
     <link rel="stylesheet" href="css/weatherly.css">
 </head>
 <body>
-<nav class="navbar bg-dark">
+<nav class="navbar bg-dark mb-3">
     <h1 class="text-white">Weatherly</h1>
-    <p id="currentCity" class=" text-white">Current city: </p>
+<!--    <p id="currentCity" class=" text-white">Current city: <span id="currentLocation"></span> </p>-->
 </nav>
 <div class="container ">
     <div class="input-group mb-3 ">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-               aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+        <input type="text" class="form-control" placeholder="Enter your city...example Chicago" aria-label="User's city search" id="searchedLocation">
+        <button class="btn btn-dark text-white btn-outline-secondary" type="button" id="locationButton">What's the weather?</button>
     </div>
 
-    <div class="container">
-        <div id="weatherCard1"></div>
-        <div id="weatherCard2"></div>
-        <div id="weatherCard3"></div>
-        <div id="weatherCard4"></div>
-        <div id="weatherCard5"></div>
+    <div class="container row mb-3">
+        <div id="weatherCard1" class="col"></div>
+        <div id="weatherCard2" class="col"></div>
+        <div id="weatherCard3" class="col"></div>
+        <div id="weatherCard4" class="col"></div>
+        <div id="weatherCard5" class="col"></div>
     </div>
 
     <div id="map"></div>
