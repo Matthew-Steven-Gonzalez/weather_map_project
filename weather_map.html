@@ -4,43 +4,61 @@
     <meta charset="UTF-8">
     <title>Weatherly</title>
     <!-- Mapbox CSS -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.1.3/css/bootstrap.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/weatherly.css">
 </head>
 <body>
+<nav class="navbar bg-dark">
+    <h1 class="text-white">Weatherly</h1>
+    <p id="currentCity" class=" text-white">Current city: </p>
+</nav>
+<div class="container ">
+    <div class="input-group mb-3 ">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+               aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
 
+    <div class="container">
+        <div id="weatherCard1"></div>
+        <div id="weatherCard2"></div>
+        <div id="weatherCard3"></div>
+        <div id="weatherCard4"></div>
+        <div id="weatherCard5"></div>
+    </div>
 
+    <div id="map"></div>
+</div>
 
-<div id="map"></div>
 
 <!-- Mapbox JS -->
+<div>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <!-- link for mapkey -->
 
-<!-- link for mapkey -->
+    <script src="js/keys.js"></script>
 
-<script src="js/keys.js"></script>
+    <!-- link for geocorder -->
 
-<!-- link for geocorder -->
+    <script src="js/mapbox-geocoder-utils.js"></script>
 
-<script src="js/mapbox-geocoder-utils.js"></script>
+    <!-- link for bootstrap -->
 
-<!-- link for bootstrap -->
+    <script defer src="bootstrap-5.1.3/js/bootstrap.js"></script>
 
-<script defer src="bootstrap-5.1.3/js/bootstrap.js"></script>
+    <!-- link for jQuery -->
 
-<!-- link for jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Custom JS-->
 
-<!-- Custom JS-->
-
-<script src="js/weatherly.js"></script>
-
+    <script src="js/weatherly.js"></script>
+</div>
 
 </body>
 </html>

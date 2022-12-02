@@ -7,9 +7,18 @@ let map = new mapboxgl.Map({
 });
 
 
-$.get("http://api.openweathermap.org/data/2.5/weather", {
+$.get("http://api.openweathermap.org/data/3.0/onecall", {
     APPID: weatherKey,
-    q:     "Virginia Beach, US",
+    lat: 42.30528,
+    lon: -87.96028,
+    units: "imperial"
+}).done(function(data) {
+    console.log(data);
+});
+
+$.get("http://api.openweathermap.org/data/2.5/forecast", {
+    APPID: weatherKey,
+    q: "Chicago, US",
     units: "imperial"
 }).done(function(data) {
     console.log(data);
