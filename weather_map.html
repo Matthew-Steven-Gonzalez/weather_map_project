@@ -11,54 +11,58 @@
     <link rel="stylesheet" href="css/weatherly.css">
 </head>
 <body>
-<nav class="navbar bg-dark mb-3">
-    <h1 class="text-white">Weatherly</h1>
-</nav>
-<div class="container ">
-    <div class="input-group mb-3 ">
-        <input type="text" class="form-control" placeholder="Enter your city...example Chicago" aria-label="User's city search" id="searchedLocation">
-        <button class="btn btn-dark text-white btn-outline-secondary" type="button" id="locationButton">What's the weather?</button>
+
+<!--    Nav bar with name-->
+    <nav class="navbar bg-dark mb-3">
+        <h1 id="siteName" class="text-white ms-2">Weatherly</h1>
+    </nav>
+<!-- website content search bar, city name, and forecast cards-->
+    <div class="container ">
+        <div class="input-group mb-4">
+            <input type="text" class="form-control rounded" placeholder="Enter your city...example Chicago" aria-label="User's city search" id="searchedLocation">
+            <button class="btn btn-dark text-white btn-outline-secondary rounded" type="button" id="locationButton">What's the weather?</button>
+        </div>
+
+        <div id="forecastCity" class="card mb-4 ">
+            <h2 id="cityName"></h2>
+        </div>
+
+        <div class="container row mb-3 flex-nowrap">
+            <div id="weatherCard1" class="col weatherCard"></div>
+            <div id="weatherCard2" class="col weatherCard"></div>
+            <div id="weatherCard3" class="col weatherCard"></div>
+            <div id="weatherCard4" class="col weatherCard"></div>
+            <div id="weatherCard5" class="col weatherCard"></div>
+        </div>
     </div>
+<!-- Map showing current location with marker-->
+    <div id="map" class="mx-auto"></div>
+<!-- Div containing JS for orginization-->
+    <div>
+        <!-- Mapbox JS -->
 
-    <div class="container row mb-3 flex-nowrap">
-        <div id="weatherCard1" class="col weatherCard"></div>
-        <div id="weatherCard2" class="col weatherCard "></div>
-        <div id="weatherCard3" class="col weatherCard"></div>
-        <div id="weatherCard4" class="col weatherCard"></div>
-        <div id="weatherCard5" class="col weatherCard"></div>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js' rel="script"></script>
+
+        <!-- link for mapkey -->
+
+        <script src="js/keys.js" rel="script"></script>
+
+        <!-- link for geocorder -->
+
+        <script src="js/mapbox-geocoder-utils.js" rel="script"></script>
+
+        <!-- link for bootstrap -->
+
+        <script src="bootstrap-5.1.3/js/bootstrap.js" rel="script"></script>
+
+        <!-- link for jQuery -->
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" rel="script"></script>
+
+        <!-- Custom JS-->
+
+        <script src="js/weatherly.js" rel="script"></script>
     </div>
-
-    <div id="map" class=""></div>
-</div>
-
-
-
-<div>
-    <!-- Mapbox JS -->
-
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js' rel="script"></script>
-
-    <!-- link for mapkey -->
-
-    <script src="js/keys.js" rel="script"></script>
-
-    <!-- link for geocorder -->
-
-    <script src="js/mapbox-geocoder-utils.js" rel="script"></script>
-
-    <!-- link for bootstrap -->
-
-    <script src="bootstrap-5.1.3/js/bootstrap.js" rel="script"></script>
-
-    <!-- link for jQuery -->
-
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" rel="script"></script>
-
-    <!-- Custom JS-->
-
-    <script src="js/weatherly.js" rel="script"></script>
-</div>
-
 </body>
 </html>
